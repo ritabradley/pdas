@@ -1,16 +1,22 @@
 import React from "react";
-import ProfileCard from "./components/ProfileCard.jsx";
+import pdas from "./pdas.js";
+import ProfileCard from "./components/ProfileCard";
 
 function App() {
 
 	return (
 		<div>
 			<h1>Personal Digital Assistants</h1>
-			<ProfileCard
-                name="Alexa"
-                handle="alexa23"
-                bio="I'll help you place your next Amazon order!"
-            />
+			{pdas.map((pda) => {
+				return (
+					<ProfileCard
+						imgUrl={pda.imgUrl}
+						name={pda.name}
+						handle={pda.handle}
+						bio={pda.bio}
+					/>
+				);
+			})}
 		</div>
 	);
 }
